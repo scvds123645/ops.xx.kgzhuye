@@ -1,0 +1,85 @@
+export default function TelegramLanding() {
+  const telegramChannel = '@fang180';
+  const telegramLink = 'https://t.me/fang180';
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 flex items-center justify-center p-4 sm:p-6 md:p-8">
+      <div className="max-w-md w-full">
+        {/* 主卡片 */}
+        <div className="bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl p-6 sm:p-8 transform hover:scale-105 transition-transform duration-300">
+          {/* Telegram 图标 */}
+          <div className="flex justify-center mb-4 sm:mb-6">
+            <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center shadow-lg">
+              <svg 
+                viewBox="0 0 24 24" 
+                className="w-12 h-12 sm:w-14 sm:h-14 text-white"
+                fill="currentColor"
+              >
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+              </svg>
+            </div>
+          </div>
+
+          {/* 标题 */}
+          <h1 className="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-2 sm:mb-3 px-2">
+            脸书小助手最新地址
+          </h1>
+          
+          {/* 描述 */}
+          <p className="text-center text-gray-600 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base px-2">
+            关注 Telegram 频道，第一时间获取脸书小助手最新可用地址和更新通知
+          </p>
+
+          {/* 频道名称展示 */}
+          <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-3 sm:p-4 mb-5 sm:mb-6 border border-blue-100">
+            <p className="text-center text-gray-500 text-xs sm:text-sm mb-1">Telegram 频道</p>
+            <p className="text-center text-xl sm:text-2xl font-bold text-blue-600 font-mono break-all">
+              {telegramChannel}
+            </p>
+          </div>
+
+          {/* CTA 按钮 */}
+          <a
+            href={telegramLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-3.5 sm:py-4 px-6 rounded-2xl text-center transition-all duration-300 shadow-lg hover:shadow-xl active:scale-95 text-sm sm:text-base"
+          >
+            <span className="flex items-center justify-center gap-2">
+              <svg 
+                viewBox="0 0 24 24" 
+                className="w-5 h-5 sm:w-6 sm:h-6"
+                fill="currentColor"
+              >
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+              </svg>
+              立即关注获取地址
+            </span>
+          </a>
+
+          {/* 特性列表 */}
+          <div className="mt-6 sm:mt-8 space-y-2.5 sm:space-y-3">
+            {[
+              { icon: '🔗', text: '实时更新最新地址' },
+              { icon: '⚡', text: '第一时间通知变更' },
+              { icon: '🛡️', text: '防失联备用地址' }
+            ].map((item, index) => (
+              <div 
+                key={index}
+                className="flex items-center gap-3 p-2.5 sm:p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors"
+              >
+                <span className="text-xl sm:text-2xl">{item.icon}</span>
+                <span className="text-gray-700 text-sm sm:text-base">{item.text}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* 底部提示 */}
+        <p className="text-center text-white/90 text-xs sm:text-sm mt-4 sm:mt-6 drop-shadow-lg px-4">
+          关注频道,永不失联 • 获取脸书小助手最新地址
+        </p>
+      </div>
+    </div>
+  );
+}
